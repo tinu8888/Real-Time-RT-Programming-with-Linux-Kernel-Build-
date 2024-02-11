@@ -24,13 +24,15 @@ mkdir kernel
 cd kernel/
 git clone --depth=1 --branch rpi-6.1.y https://github.com/raspberrypi/linux
 ```
-Download and apply the patch:
+Download the patch:
 ```bash
 wget https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/6.1/patch-6.1.77-rt24.patch.gz
-zcat ../patch-6.1.77-rt24.patch.gz | patch -p1 --dry-run
 ```
 **Note: Please check for any error in patch (if you follow same steps you should not get any issue and patch should apply easily.**
-
+check for any error 
+```bash
+zcat ../patch-6.1.77-rt24.patch.gz | patch -p1 --dry-run
+```
 Apply the patch
 ```bash
 zcat ../patch-6.1.77-rt24.patch.gz | patch -p
