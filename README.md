@@ -35,6 +35,7 @@ zcat ../patch-6.1.77-rt24.patch.gz | patch -p1 --dry-run
 ```
 Apply the patch
 ```bash
+cd linux/
 zcat ../patch-6.1.77-rt24.patch.gz | patch -p
 ```
 Apply the default kernel configuration and Customize for PREEMPT_RT
@@ -57,6 +58,7 @@ make -j4 Image.gz modules dtbs
 ```
 **Install the kernel, modules, and Device Tree blobs**
 ```bash
+sudo make modules_install
 sudo cp arch/arm64/boot/dts/broadcom/*.dtb /boot/
 sudo cp arch/arm64/boot/dts/overlays/.dtb /boot/overlays/
 sudo cp arch/arm64/boot/dts/overlays/README /boot/overlays/
